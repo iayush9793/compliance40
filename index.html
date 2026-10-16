@@ -314,9 +314,12 @@
 
     <script>
         const CONFIG = {
-            clientId: "128820302240-k7bk8mui4lr16gvonbqb7qn76o9rgd1q.apps.googleusercontent.com",
-            clientSecret: "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",
-            accounts: [
+            // Default credentials used across accounts
+            defaultClientId: "128820302240-k7bk8mui4lr16gvonbqb7qn76o9rgd1q.apps.googleusercontent.com",
+            defaultClientSecret: "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",
+            
+            // Accounts array: specify custom clientId/clientSecret per account if needed
+         accounts: [
                 { name: "ashwinliveseedforall", type: "Opener", token: "1//0gub_tDUPkLESCgYIARAAGBASNwF-L9IrVdFJ0uMmaXYM4AG01a6r7Zpo3uDchB7DNXW0Rkt4oDojH3-9HCrZX5tr8uDFmABRRY0" },
                 { name: "asharyaliveseedacc", type: "Opener", token: "1//0guqANvb_X5K3CgYIARAAGBASNwF-L9IrqODXDbSdAtPz7GznJrXl0HXkUbcKQ9yqWwda563DfGtAbc8MlFkDZuja-SzHMG7WkXk" },
                 { name: "liveseedsformm", type: "Opener", token: "1//0gj4AZbhLjWK0CgYIARAAGBASNwF-L9IrKfhgpAfv-20pn5NC72ByHJS-b17sGCNrkV3vTDkiVGV98aGbwn32IKXhx97d0X-KHeg" },
@@ -326,16 +329,22 @@
                 { name: "agkartikag90", type: "Opener", token: "1//0g1w2jQ29C6fkCgYIARAAGBASNwF-L9Ir1mkqwDP8wVSBC5KaKgh12Z2Myzv46aE2vPX0kJkxrOEo7t_NxyhEXSbp7RQBMsF0a9U" },
                 { name: "muskansharma90", type: "Opener", token: "1//0gPq37jtx0_0KCgYIARAAGBASNwF-L9IreaaDx20paQujuIoTUk67NYt2pD9caOBJvffab3il9PtvL4GEYKYOFdffiWpxLTh6oeU" },
                 { name: "ashwinaryaop", type: "Non-Opener", token: "1//0gVEsWZHhysDiCgYIARAAGBASNwF-L9Ir1VA8Wq2OqrP4NB6DBnNAM64bLqlW05jn1p9BXNcgLg6On-w_wa8AS4nVi3P6kaWAYMI" },
-                { name: "ashwinaryanono", type: "Non-Opener", token: "1//0gl06ju2Mpv_UCgYIARAAGBASNwF-L9IrE1u7ohq49G77gxforJWrE25LFW0l9mhJG77uIePV9d76iSKGXi_zDDxMPukjlM-vPxM" },
                 { name: "satyam414424", type: "Non-Opener", token: "1//0gumKB5PJdWMECgYIARAAGBASNwF-L9IrMUECWwvnDe-zMU4Y6-zLFZPQx3LGZNMCE-6sJ2qzwLa6ZBR9T0L3nw8p__rwRYUPiVM" },
-                { name: "amit", token: "1//0gNaByzqCznp1CgYIARAAGBASNwF-L9Iruh3sbGk3ITUI_Ps7Mn2EpgQUXEhAItN9KFEfvzDu9qkxWKBGPbhMPb6vJMlaB8uKbD8" },
+              
+                    { name: "amit", token: "1//0gNaByzqCznp1CgYIARAAGBASNwF-L9Iruh3sbGk3ITUI_Ps7Mn2EpgQUXEhAItN9KFEfvzDu9qkxWKBGPbhMPb6vJMlaB8uKbD8" },
                 { name: "sharmaakrati61", token: "1//0gzyI6toALH17CgYIARAAGBASNwF-L9Ir_-PUjhWKqo91UWFievRdEJtwBNYHQAerHYOPXdyuN1-JkPGG6zY8NN7ajueHyoN7s8c" },
                 { name: "kartiknonop", token: "1//0gSqrVXVlG_0TCgYIARAAGBASNwF-L9Ir1kaHgHXSyokJ2EwfeIjlkLZOkx93NlW2Qfyu02pay1Mbv9g7Du2dYTcraoym1Wu5SBc" },
                 { name: "taniya.sharma9907", token: "1//0g2cR4HYW0jNWCgYIARAAGBASNwF-L9IrhyY_sNQkbDZANnH-xX-WOJebscIQvPhg9QgSc0N8nV99CayaPVqcvpz1dq8xNY8xpQM" },
                 { name: "tanuu.09886", token: "1//0gry9fQAfLlqDCgYIARAAGBASNwF-L9Iri5c4vJOIfXy0wkcJCC5j53nOhQvvZq9hN-QjIkDDFNraaH4J38VJiFKK_DU4M6c57bs" },
                 { name: "a73583689", token: "1//0gUD3zn65zbBDCgYIARAAGBASNwF-L9Ir9OOdD3kyuccuKlVCByTxTZ4OQ4Q3FFWvBObMef-dOoSaj3-QR3saf0EwFFb1JE3pqHg" },
-               
                 { name: "artselenophile109", token: "1//0gAYCL_CrcSybCgYIARAAGBASNwF-L9Ir_5CuuLPz5aMhdp2A3rWhDzAs-9ADuwPP4d8Y5ltUaPlfRbDvzDBYKCy8Zh36SHdTS9M" },
+                  { 
+                    name: "ashwinaryanono", 
+                    type: "Non-Opener", 
+                    token: "1//0g6qv3E3pprRyCgYIARAAGBASNwF-L9Ir2_X7lmQnuoPgkTHwSKCYGk3Lvy-rKCUXmBhOQL2uG6B-YojzqSmFiCVyJp0vNBfoq6c",
+                    clientId: "707901165841-938emg3s0i65g4j1nebqqf33kr65rblp.apps.googleusercontent.com",
+                    clientSecret: "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"
+                }
             ]
         };
 
